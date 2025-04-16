@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>For You ❤️</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Sparkle Trail Container -->
+  <div id="sparkle-container"></div>
+
+  <!-- 9:16 Wrapper -->
+  <div class="wrapper">
+    <!-- Paper with Auto-Typed Message -->
+    <div class="paper" id="paper">
+      <div class="message">
+        <h2>Dear my Baby,</h2>
+        <p><span id="typedText"></span></p> <!-- Auto-type target -->
+      </div>
+    </div>
+
+    <!-- Heart and Cinnamoroll Icon -->
+    <div class="heart" id="heart">
+      <p class="click-text">Click the Cinnamorol!</p>
+      <img src="allem.png.png" alt="Cinnamoroll" class="cinnamoroll" />
+      <!-- Stickers -->
+    
+      
+      
+
+    </div>
+
+    <!-- Heart Particles -->
+    <div class="heart-particles" id="hearts-container"></div>
+  </div>
+
+  <!-- Auto-Type Script -->
+  <script>
+    const text = "Hi baby, I made something super simple for you kasi I was thinking about how I can express my love in a cute way kahit digital lang. I know it's not super grand and its sounds cringe, pero I promise I put so much thought and effort into it. As in habang ginagawa ko 'to, I kept imagining your smile and na-feel ko talaga na worth it lahat. This is just a small thing, pero it's filled with all the kilig and love I have for you. I hope when you open it, you feel how much I adore you—even in the little things. You're my favorite person ever and I just want to make you feel special every chance I get.";
+    const target = document.getElementById("typedText");
+    let index = 0;
+
+    function typeLetter() {
+      if (index < text.length) {
+        target.innerHTML += text.charAt(index);
+        index++;
+        setTimeout(typeLetter, 50);
+      }
+    }
+
+    // Start auto-typing once paper is visible
+    document.getElementById("heart").addEventListener("click", () => {
+      setTimeout(typeLetter, 1000);
+    });
+  </script>
+
+  <!-- Main Script -->
+  <script src="script.js"></script>
+</body>
+</html>
